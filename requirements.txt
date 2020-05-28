@@ -1,0 +1,23 @@
+extra-index-url https://pointstate.jfrog.io/pointstate/api/pypi/pypi-local/simple --trusted-host pointstate.jfrog.io
+openpyxl==3.0.0
+xlsxwriter==1.2.2
+dataingestion==0.1.25
+numpy==1.15.2
+pandas
+psycopg2==2.7.5
+pymssql==2.1.4
+pyodbc==4.0.24
+python-dateutil==2.7.3
+pytz==2018.5
+six==1.11.0
+SQLAlchemy==1.2.12
+sqlalchemy-redshift==0.7.1
+teamcity-messages==1.21
+xlrd
+boto3
+pyarrow==0.17.1
+hd
+pypandoc
+Py4J
+pyspark
+hdfs
