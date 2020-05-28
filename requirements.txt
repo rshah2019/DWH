@@ -16,6 +16,6 @@ boto3
 pyarrow==0.17.1
 hd
 pypandoc
-Py4J
+Py4J==0.10.7
 pyspark
 hdfs
