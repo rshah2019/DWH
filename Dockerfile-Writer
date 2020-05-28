@@ -88,6 +88,7 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 
 ARG PIP_EXTRA_INDEX_URL
 
+COPY writer2.py ./writer2.py
 COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
