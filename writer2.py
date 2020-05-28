@@ -5,6 +5,7 @@ import pyarrow.parquet as pq
 import os
 import subprocess
 
+"""
 from pyarrow import fs
 
 
@@ -30,6 +31,7 @@ classpath = subprocess.check_output([hadoop_bin_exe, 'classpath', '--glob'])
 
 os.environ['CLASSPATH'] = classpath.decode('utf-8')
 
+"""
 
 df = pd.DataFrame({'one': [-1, np.nan, 2.5],
                     'two': ['foo', 'bar', 'baz'],
