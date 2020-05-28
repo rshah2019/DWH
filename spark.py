@@ -7,6 +7,7 @@ import os
 #os.environ["hadoop.home.dir"] = "C:/Users/rvs"
 
 # initialise sparkContext
+# fetch test
 spark = SparkSession.builder \
     .master('local') \
     .appName('myAppName') \
