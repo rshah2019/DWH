@@ -76,7 +76,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 
 RUN pip install pyodbc
 
-
+RUN mkdir /home/svc-portal-uat/files
 
 VOLUME /com
 RUN apt-get install unzip -y && \
@@ -88,11 +88,11 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 
 ARG PIP_EXTRA_INDEX_URL
 
-COPY writer2.py ./writer2.py
+COPY simple_writer.py ./simple_writer.py
 COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 RUN pwd
 ENV PYTHONPATH="/"
 
-CMD [ "python", "-u", "./writer2.py" ]
+CMD [ "python", "-u", "./simple_writer.py" ]

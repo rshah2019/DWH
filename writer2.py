@@ -42,5 +42,3 @@ fs = pa.hdfs.connect(host='PSNYD-KAFKA-01', port=9000)
 table = pa.Table.from_pandas(df)
 pq.write_table(table, 'first.parquet')
 
-
-
