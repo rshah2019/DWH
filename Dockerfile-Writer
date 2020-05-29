@@ -76,8 +76,6 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 
 RUN pip install pyodbc
 
-RUN mkdir /home/svc-portal-uat/files
-
 VOLUME /com
 RUN apt-get install unzip -y && \
     apt-get autoremove -y
