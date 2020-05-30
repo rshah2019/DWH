@@ -16,6 +16,7 @@ print(tickers)
 
 df = pd.DataFrame(columns=['PositionId', 'Ticker', 'Quantity', 'Currency', 'Exposure'])
 for i in range(int(max_row)):
+    print(i)
     cur_row = [i]
     cur_row.append(random.choice(tickers))
     cur_row.append(randrange(100000))
