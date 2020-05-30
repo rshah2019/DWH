@@ -14,20 +14,21 @@ max_row = os.environ.get('max_row', '100')
 tickers = list(get_tickers().keys())
 print(tickers)
 
-df = pd.DataFrame(columns=['PositionId', 'Ticker', 'Quantity', 'Currency', 'Exposure'])
+rows = []
 for i in range(int(max_row)):
-    print(i)
-    cur_row = [i]
-    cur_row.append(random.choice(tickers))
-    cur_row.append(randrange(100000))
-    cur_row.append('USD')
-    cur_row.append(randrange(100000))
-    df.loc[i] = cur_row
+    cur_row = {'PositionId': i,
+               'Ticker': random.choice(tickers),
+               'Quantity': randrange(100000),
+               'Currency': 'USD',
+               'Exposure': randrange(100000)}
+    rows.append(cur_row)
 
-dir = os.environ.get('directory', ".")
+df = pd.DataFrame(rows)
+
+directory = os.environ.get('directory', ".")
 
 table = pa.Table.from_pandas(df)
-pq.write_table(table, os.path.join(dir, 'trades_eod.parquet'))
+pq.write_table(table, os.path.join(directory, 'trades_eod.parquet'))
 
 
 print(df)
