@@ -10,12 +10,12 @@ import pyarrow.parquet as pq
 import os
 
 
-max_row = os.environ.get('max_row', 100)
+max_row = os.environ.get('max_row', '100')
 tickers = list(get_tickers().keys())
 print(tickers)
 
 df = pd.DataFrame(columns=['PositionId', 'Ticker', 'Quantity', 'Currency', 'Exposure'])
-for i in range(max_row):
+for i in range(int(max_row)):
     cur_row = [i]
     cur_row.append(random.choice(tickers))
     cur_row.append(randrange(100000))
