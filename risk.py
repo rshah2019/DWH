@@ -22,6 +22,7 @@ def get_risk(max_row, prefix):
         if i % 100000 == 0:
             risk_df = risk_df.append(pd.DataFrame(rows), ignore_index=True) if risk_df is not None else pd.DataFrame(rows)
             rows = []
+            print('i is ' + str(i))
 
     risk_df = risk_df.append(pd.DataFrame(rows), ignore_index=True) if risk_df is not None else pd.DataFrame(rows)
     return risk_df

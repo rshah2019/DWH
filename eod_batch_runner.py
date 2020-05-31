@@ -8,6 +8,7 @@ import os
 import datetime
 from risk import *
 
+
 def run_eod_batch():
 
     trade_date = datetime.datetime(2020, 5, 29)
