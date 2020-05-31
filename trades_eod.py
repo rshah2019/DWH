@@ -5,7 +5,10 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 import os
+import datetime
 
+trade_date = datetime.datetime(2020, 5, 29)
+knowledge_time = datetime.datetime.now()
 
 max_row = os.environ.get('max_row', '100')
 ins_df = get_instruments()
@@ -21,7 +24,10 @@ for i in range(int(max_row)):
     cur_row = {'PositionId': i,
                'ProductId': randrange(product_len),
                'Quantity': random.randint(-100000, 100000)*scale,
-               'Exposure': random.randint(-100000, 100000)*scale}
+               'Exposure': random.randint(-100000, 100000)*scale,
+               'TradeDate': trade_date,
+               'KnowledgeTime': knowledge_time
+               }
     rows.append(cur_row)
 
     if i % 100000 == 0:
