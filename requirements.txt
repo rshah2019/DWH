@@ -8,8 +8,6 @@ pyodbc==4.0.24
 python-dateutil==2.7.3
 pytz==2018.5
 six==1.11.0
-SQLAlchemy==1.2.12
-sqlalchemy-redshift==0.7.1
 teamcity-messages==1.21
 xlrd
 boto3
