@@ -87,7 +87,6 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 ARG PIP_EXTRA_INDEX_URL
 
 COPY readers ./readers
-COPY simple_writer.py ./simple_writer.py
 COPY eod_batch_runner.py ./eod_batch_runner.py
 COPY risk.py ./risk.py
 COPY requirements.txt ./requirements.txt
