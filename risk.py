@@ -5,6 +5,7 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 
+
 def get_risk(max_row, prefix):
     print("generating risk for " + prefix)
     risk_df = None
@@ -15,7 +16,7 @@ def get_risk(max_row, prefix):
             scale = 2500
 
         cur_row = {"PositionId": i}
-        for j in range(100):
+        for j in range(25):
             cur_row[prefix+str(j)+'Pct'] = random.randint(-1000000, 1000000) * scale
 
         rows.append(cur_row)
