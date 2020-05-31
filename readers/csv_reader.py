@@ -74,5 +74,4 @@ def get_instruments():
     return pd.DataFrame(rows)
 
 
-print(get_instruments())
 
