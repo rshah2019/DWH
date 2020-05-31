@@ -1,0 +1,461 @@
+AssetClass,Sector,Industry,ProductType
+Cash,,,CurrencySecurity
+Cash,,,Expense
+Commodity,,,CommodityFuture
+Commodity,,,CommodityFutureListedOption
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Equity,,,ELS
+Equity,,,Equity
+Equity,,,EquityIndexFuture
+Equity,,,EquityIndexVarSwap
+Equity,,,EquityListedOption
+Equity,,,EquityOption
+Equity,,,PreferredStock
+Equity,,,SimpleFlow
+Equity,,,Warrant
+Equity,Basic Materials,Chemicals,Equity
+Equity,Basic Materials,Forest Products&Paper,Equity
+Equity,Communication Services,Diversified Telecommunication,Equity
+Equity,Communication Services,Entertainment,Equity
+Equity,Communication Services,Interactive Media & Services,Equity
+Equity,Communication Services,Media,Equity
+Equity,Communication Services,Wireless Telecommunication Ser,Equity
+Equity,Communications,Internet,Equity
+Equity,Communications,Internet,PreferredStock
+Equity,Communications,Media,Equity
+Equity,Communications,Telecommunications,Equity
+Equity,Consumer Discretionary,Automobiles,Equity
+Equity,Consumer Discretionary,"Hotels, Restaurants & Leisure",Equity
+Equity,Consumer Discretionary,Household Durables,Equity
+Equity,Consumer Discretionary,Internet & Direct Marketing Re,Equity
+Equity,Consumer Discretionary,Multiline Retail,Equity
+Equity,Consumer Discretionary,Specialty Retail,Equity
+Equity,Consumer Staples,Beverages,Equity
+Equity,Consumer Staples,Food & Staples Retailing,Equity
+Equity,Consumer Staples,Food Products,Equity
+Equity,Consumer Staples,Household Products,Equity
+Equity,"Consumer, Cyclical",Airlines,Equity
+Equity,"Consumer, Cyclical",Auto Parts&Equipment,Equity
+Equity,"Consumer, Cyclical",Retail,Equity
+Equity,"Consumer, Non-cyclical",Biotechnology,Equity
+Equity,"Consumer, Non-cyclical",Commercial Services,Equity
+Equity,"Consumer, Non-cyclical",Cosmetics/Personal Care,Equity
+Equity,"Consumer, Non-cyclical",Food,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Products,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Services,Equity
+Equity,"Consumer, Non-cyclical",Pharmaceuticals,Equity
+Equity,Energy,Oil&Gas,Equity
+Equity,Energy,Oil&Gas Services,Equity
+Equity,Energy,"Oil, Gas & Consumable Fuels",Equity
+Equity,Financial,Banks,Equity
+Equity,Financial,Diversified Finan Serv,PerpetualPreferredStock
+Equity,Financials,Banks,Equity
+Equity,Financials,Consumer Finance,Equity
+Equity,Financials,Insurance,Equity
+Equity,Funds,Equity Fund,Equity
+Equity,Government,Sovereign,PerpetualPreferredStock
+Equity,Health Care,Biotechnology,Equity
+Equity,Health Care,Health Care Equipment & Suppli,Equity
+Equity,Health Care,Health Care Providers & Servic,Equity
+Equity,Health Care,Life Sciences Tools & Services,Equity
+Equity,Health Care,Pharmaceuticals,Equity
+Equity,Industrial,Aerospace/Defense,Equity
+Equity,Industrial,Building Materials,Equity
+Equity,Industrial,Machinery-Diversified,Equity
+Equity,Industrial,Miscellaneous Manufactur,Equity
+Equity,Industrial,Transportation,Equity
+Equity,Industrials,Aerospace & Defense,Equity
+Equity,Industrials,Air Freight & Logistics,Equity
+Equity,Industrials,Airlines,Equity
+Equity,Industrials,Building Products,Equity
+Equity,Industrials,Construction & Engineering,Equity
+Equity,Industrials,Electrical Equipment,Equity
+Equity,Industrials,Industrial Conglomerates,Equity
+Equity,Industrials,Machinery,Equity
+Equity,Industrials,Professional Services,Equity
+Equity,Industrials,Road & Rail,Equity
+Equity,Industrials,Trading Companies & Distributo,Equity
+Equity,Industrials,Transportation Infrastructure,Equity
+Equity,Information Technology,"Electronic Equipment, Instrume",Equity
+Equity,Information Technology,IT Services,Equity
+Equity,Information Technology,Semiconductors & Semiconductor,Equity
+Equity,Information Technology,Software,Equity
+Equity,Information Technology,"Technology Hardware, Storage &",Equity
+Equity,Materials,Chemicals,Equity
+Equity,Materials,Containers & Packaging,Equity
+Equity,Materials,Metals & Mining,Equity
+Equity,Real Estate,Equity Real Estate Investment,Equity
+Equity,Technology,Semiconductors,Equity
+Equity,Technology,Software,Equity
+Equity,Utilities,Electric,Equity
+Equity,Utilities,Electric Utilities,Equity
+FX,,,FX
+FX,,,FXOption
+FX,,,NDF
+IR,,,Bond
+IR,,,BondFuture
+IR,,,CapitalTransaction
+IR,,,Loan
+IR,,,Repo
+IR,,,Swap
+IR,,,Swaption
+IR,,,TRS
+IR,Communication Services,Diversified Telecommunication,Bond
+IR,Communication Services,Entertainment,CallableBond
+IR,Communications,Telecommunications,Bond
+IR,Communications,Telecommunications,CallableBond
+IR,Communications,Telecommunications,Loan
+IR,Consumer Discretionary,Internet & Direct Marketing Re,CallableBond
+IR,Consumer Discretionary,Specialty Retail,CallableBond
+IR,"Consumer, Cyclical",Retail,CallableBond
+IR,"Consumer, Non-cyclical",Pharmaceuticals,Bond
+IR,"Consumer, Non-cyclical",Pharmaceuticals,CallableBond
+IR,Energy,Oil&Gas,Bond
+IR,Energy,"Oil, Gas & Consumable Fuels",CallableBond
+IR,Government,Municipal,Bond
+IR,Government,Municipal,CallableBond
+IR,Government,Sovereign,Bond
+IR,Government,Sovereign,InflationBond
+IR,Government,Sovereign,TbillBond
+IR,Information Technology,Semiconductors & Semiconductor,CallableBond
+IR,Utilities,Electric,Bond
+IR,Utilities,Electric,CallableBond
+IR,Utilities,Electric Utilities,Bond
+IR,Utilities,Electric Utilities,CallableBond
+Equity,,,ELS
+Equity,,,Equity
+Equity,,,EquityIndexFuture
+Equity,,,EquityIndexVarSwap
+Equity,,,EquityListedOption
+Equity,,,EquityOption
+Equity,,,PreferredStock
+Equity,,,SimpleFlow
+Equity,,,Warrant
+Equity,Basic Materials,Chemicals,Equity
+Equity,Basic Materials,Forest Products&Paper,Equity
+Equity,Communication Services,Diversified Telecommunication,Equity
+Equity,Communication Services,Entertainment,Equity
+Equity,Communication Services,Interactive Media & Services,Equity
+Equity,Communication Services,Media,Equity
+Equity,Communication Services,Wireless Telecommunication Ser,Equity
+Equity,Communications,Internet,Equity
+Equity,Communications,Internet,PreferredStock
+Equity,Communications,Media,Equity
+Equity,Communications,Telecommunications,Equity
+Equity,Consumer Discretionary,Automobiles,Equity
+Equity,Consumer Discretionary,"Hotels, Restaurants & Leisure",Equity
+Equity,Consumer Discretionary,Household Durables,Equity
+Equity,Consumer Discretionary,Internet & Direct Marketing Re,Equity
+Equity,Consumer Discretionary,Multiline Retail,Equity
+Equity,Consumer Discretionary,Specialty Retail,Equity
+Equity,Consumer Staples,Beverages,Equity
+Equity,Consumer Staples,Food & Staples Retailing,Equity
+Equity,Consumer Staples,Food Products,Equity
+Equity,Consumer Staples,Household Products,Equity
+Equity,"Consumer, Cyclical",Airlines,Equity
+Equity,"Consumer, Cyclical",Auto Parts&Equipment,Equity
+Equity,"Consumer, Cyclical",Retail,Equity
+Equity,"Consumer, Non-cyclical",Biotechnology,Equity
+Equity,"Consumer, Non-cyclical",Commercial Services,Equity
+Equity,"Consumer, Non-cyclical",Cosmetics/Personal Care,Equity
+Equity,"Consumer, Non-cyclical",Food,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Products,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Services,Equity
+Equity,"Consumer, Non-cyclical",Pharmaceuticals,Equity
+Equity,Energy,Oil&Gas,Equity
+Equity,Energy,Oil&Gas Services,Equity
+Equity,Energy,"Oil, Gas & Consumable Fuels",Equity
+Equity,Financial,Banks,Equity
+Equity,Financial,Diversified Finan Serv,PerpetualPreferredStock
+Equity,Financials,Banks,Equity
+Equity,Financials,Consumer Finance,Equity
+Equity,Financials,Insurance,Equity
+Equity,Funds,Equity Fund,Equity
+Equity,Government,Sovereign,PerpetualPreferredStock
+Equity,Health Care,Biotechnology,Equity
+Equity,Health Care,Health Care Equipment & Suppli,Equity
+Equity,Health Care,Health Care Providers & Servic,Equity
+Equity,Health Care,Life Sciences Tools & Services,Equity
+Equity,Health Care,Pharmaceuticals,Equity
+Equity,Industrial,Aerospace/Defense,Equity
+Equity,Industrial,Building Materials,Equity
+Equity,Industrial,Machinery-Diversified,Equity
+Equity,Industrial,Miscellaneous Manufactur,Equity
+Equity,Industrial,Transportation,Equity
+Equity,Industrials,Aerospace & Defense,Equity
+Equity,Industrials,Air Freight & Logistics,Equity
+Equity,Industrials,Airlines,Equity
+Equity,Industrials,Building Products,Equity
+Equity,Industrials,Construction & Engineering,Equity
+Equity,Industrials,Electrical Equipment,Equity
+Equity,Industrials,Industrial Conglomerates,Equity
+Equity,,,ELS
+Equity,,,Equity
+Equity,,,EquityIndexFuture
+Equity,,,EquityIndexVarSwap
+Equity,,,EquityListedOption
+Equity,,,EquityOption
+Equity,,,PreferredStock
+Equity,,,SimpleFlow
+Equity,,,Warrant
+Equity,Basic Materials,Chemicals,Equity
+Equity,Basic Materials,Forest Products&Paper,Equity
+Equity,Communication Services,Diversified Telecommunication,Equity
+Equity,Communication Services,Entertainment,Equity
+Equity,Communication Services,Interactive Media & Services,Equity
+Equity,Communication Services,Media,Equity
+Equity,Communication Services,Wireless Telecommunication Ser,Equity
+Equity,Communications,Internet,Equity
+Equity,Communications,Internet,PreferredStock
+Equity,Communications,Media,Equity
+Equity,Communications,Telecommunications,Equity
+Equity,Consumer Discretionary,Automobiles,Equity
+Equity,Consumer Discretionary,"Hotels, Restaurants & Leisure",Equity
+Equity,Consumer Discretionary,Household Durables,Equity
+Equity,Consumer Discretionary,Internet & Direct Marketing Re,Equity
+Equity,Consumer Discretionary,Multiline Retail,Equity
+Equity,Consumer Discretionary,Specialty Retail,Equity
+Equity,Consumer Staples,Beverages,Equity
+Equity,Consumer Staples,Food & Staples Retailing,Equity
+Equity,Consumer Staples,Food Products,Equity
+Equity,Consumer Staples,Household Products,Equity
+Equity,"Consumer, Cyclical",Airlines,Equity
+Equity,"Consumer, Cyclical",Auto Parts&Equipment,Equity
+Equity,"Consumer, Cyclical",Retail,Equity
+Equity,"Consumer, Non-cyclical",Biotechnology,Equity
+Equity,"Consumer, Non-cyclical",Commercial Services,Equity
+Equity,"Consumer, Non-cyclical",Cosmetics/Personal Care,Equity
+Equity,"Consumer, Non-cyclical",Food,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Products,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Services,Equity
+Equity,"Consumer, Non-cyclical",Pharmaceuticals,Equity
+Equity,Energy,Oil&Gas,Equity
+Equity,Energy,Oil&Gas Services,Equity
+Equity,Energy,"Oil, Gas & Consumable Fuels",Equity
+Equity,Financial,Banks,Equity
+Equity,Financial,Diversified Finan Serv,PerpetualPreferredStock
+Equity,Financials,Banks,Equity
+Equity,Financials,Consumer Finance,Equity
+Equity,Financials,Insurance,Equity
+Equity,Funds,Equity Fund,Equity
+Equity,Government,Sovereign,PerpetualPreferredStock
+Equity,Health Care,Biotechnology,Equity
+Equity,Health Care,Health Care Equipment & Suppli,Equity
+Equity,Health Care,Health Care Providers & Servic,Equity
+Equity,Health Care,Life Sciences Tools & Services,Equity
+Equity,Health Care,Pharmaceuticals,Equity
+Equity,Industrial,Aerospace/Defense,Equity
+Equity,Industrial,Building Materials,Equity
+Equity,Industrial,Machinery-Diversified,Equity
+Equity,Industrial,Miscellaneous Manufactur,Equity
+Equity,Industrial,Transportation,Equity
+Equity,Industrials,Aerospace & Defense,Equity
+Equity,Industrials,Air Freight & Logistics,Equity
+Equity,Industrials,Airlines,Equity
+Equity,Industrials,Building Products,Equity
+Equity,Industrials,Construction & Engineering,Equity
+Equity,Industrials,Electrical Equipment,Equity
+Equity,Industrials,Industrial Conglomerates,Equity
+Equity,,,ELS
+Equity,,,Equity
+Equity,,,EquityIndexFuture
+Equity,,,EquityIndexVarSwap
+Equity,,,EquityListedOption
+Equity,,,EquityOption
+Equity,,,PreferredStock
+Equity,,,SimpleFlow
+Equity,,,Warrant
+Equity,Basic Materials,Chemicals,Equity
+Equity,Basic Materials,Forest Products&Paper,Equity
+Equity,Communication Services,Diversified Telecommunication,Equity
+Equity,Communication Services,Entertainment,Equity
+Equity,Communication Services,Interactive Media & Services,Equity
+Equity,Communication Services,Media,Equity
+Equity,Communication Services,Wireless Telecommunication Ser,Equity
+Equity,Communications,Internet,Equity
+Equity,Communications,Internet,PreferredStock
+Equity,Communications,Media,Equity
+Equity,Communications,Telecommunications,Equity
+Equity,Consumer Discretionary,Automobiles,Equity
+Equity,Consumer Discretionary,"Hotels, Restaurants & Leisure",Equity
+Equity,Consumer Discretionary,Household Durables,Equity
+Equity,Consumer Discretionary,Internet & Direct Marketing Re,Equity
+Equity,Consumer Discretionary,Multiline Retail,Equity
+Equity,Consumer Discretionary,Specialty Retail,Equity
+Equity,Consumer Staples,Beverages,Equity
+Equity,Consumer Staples,Food & Staples Retailing,Equity
+Equity,Consumer Staples,Food Products,Equity
+Equity,Consumer Staples,Household Products,Equity
+Equity,"Consumer, Cyclical",Airlines,Equity
+Equity,"Consumer, Cyclical",Auto Parts&Equipment,Equity
+Equity,"Consumer, Cyclical",Retail,Equity
+Equity,"Consumer, Non-cyclical",Biotechnology,Equity
+Equity,"Consumer, Non-cyclical",Commercial Services,Equity
+Equity,"Consumer, Non-cyclical",Cosmetics/Personal Care,Equity
+Equity,"Consumer, Non-cyclical",Food,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Products,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Services,Equity
+Equity,"Consumer, Non-cyclical",Pharmaceuticals,Equity
+Equity,Energy,Oil&Gas,Equity
+Equity,Energy,Oil&Gas Services,Equity
+Equity,Energy,"Oil, Gas & Consumable Fuels",Equity
+Equity,Financial,Banks,Equity
+Equity,Financial,Diversified Finan Serv,PerpetualPreferredStock
+Equity,Financials,Banks,Equity
+Equity,Financials,Consumer Finance,Equity
+Equity,Financials,Insurance,Equity
+Equity,Funds,Equity Fund,Equity
+Equity,Government,Sovereign,PerpetualPreferredStock
+Equity,Health Care,Biotechnology,Equity
+Equity,Health Care,Health Care Equipment & Suppli,Equity
+Equity,Health Care,Health Care Providers & Servic,Equity
+Equity,Health Care,Life Sciences Tools & Services,Equity
+Equity,Health Care,Pharmaceuticals,Equity
+Equity,Industrial,Aerospace/Defense,Equity
+Equity,Industrial,Building Materials,Equity
+Equity,Industrial,Machinery-Diversified,Equity
+Equity,Industrial,Miscellaneous Manufactur,Equity
+Equity,Industrial,Transportation,Equity
+Equity,Industrials,Aerospace & Defense,Equity
+Equity,Industrials,Air Freight & Logistics,Equity
+Equity,Industrials,Airlines,Equity
+Equity,Industrials,Building Products,Equity
+Equity,Industrials,Construction & Engineering,Equity
+Equity,Industrials,Electrical Equipment,Equity
+Equity,Industrials,Industrial Conglomerates,Equity
+Equity,,,ELS
+Equity,,,Equity
+Equity,,,EquityIndexFuture
+Equity,,,EquityIndexVarSwap
+Equity,,,EquityListedOption
+Equity,,,EquityOption
+Equity,,,PreferredStock
+Equity,,,SimpleFlow
+Equity,,,Warrant
+Equity,Basic Materials,Chemicals,Equity
+Equity,Basic Materials,Forest Products&Paper,Equity
+Equity,Communication Services,Diversified Telecommunication,Equity
+Equity,Communication Services,Entertainment,Equity
+Equity,Communication Services,Interactive Media & Services,Equity
+Equity,Communication Services,Media,Equity
+Equity,Communication Services,Wireless Telecommunication Ser,Equity
+Equity,Communications,Internet,Equity
+Equity,Communications,Internet,PreferredStock
+Equity,Communications,Media,Equity
+Equity,Communications,Telecommunications,Equity
+Equity,Consumer Discretionary,Automobiles,Equity
+Equity,Consumer Discretionary,"Hotels, Restaurants & Leisure",Equity
+Equity,Consumer Discretionary,Household Durables,Equity
+Equity,Consumer Discretionary,Internet & Direct Marketing Re,Equity
+Equity,Consumer Discretionary,Multiline Retail,Equity
+Equity,Consumer Discretionary,Specialty Retail,Equity
+Equity,Consumer Staples,Beverages,Equity
+Equity,Consumer Staples,Food & Staples Retailing,Equity
+Equity,Consumer Staples,Food Products,Equity
+Equity,Consumer Staples,Household Products,Equity
+Equity,"Consumer, Cyclical",Airlines,Equity
+Equity,"Consumer, Cyclical",Auto Parts&Equipment,Equity
+Equity,"Consumer, Cyclical",Retail,Equity
+Equity,"Consumer, Non-cyclical",Biotechnology,Equity
+Equity,"Consumer, Non-cyclical",Commercial Services,Equity
+Equity,"Consumer, Non-cyclical",Cosmetics/Personal Care,Equity
+Equity,"Consumer, Non-cyclical",Food,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Products,Equity
+Equity,"Consumer, Non-cyclical",Healthcare-Services,Equity
+Equity,"Consumer, Non-cyclical",Pharmaceuticals,Equity
+Equity,Energy,Oil&Gas,Equity
+Equity,Energy,Oil&Gas Services,Equity
+Equity,Energy,"Oil, Gas & Consumable Fuels",Equity
+Equity,Financial,Banks,Equity
+Equity,Financial,Diversified Finan Serv,PerpetualPreferredStock
+Equity,Financials,Banks,Equity
+Equity,Financials,Consumer Finance,Equity
+Equity,Financials,Insurance,Equity
+Equity,Funds,Equity Fund,Equity
+Equity,Government,Sovereign,PerpetualPreferredStock
+Equity,Health Care,Biotechnology,Equity
+Equity,Health Care,Health Care Equipment & Suppli,Equity
+Equity,Health Care,Health Care Providers & Servic,Equity
+Equity,Health Care,Life Sciences Tools & Services,Equity
+Equity,Health Care,Pharmaceuticals,Equity
+Equity,Industrial,Aerospace/Defense,Equity
+Equity,Industrial,Building Materials,Equity
+Equity,Industrial,Machinery-Diversified,Equity
+Equity,Industrial,Miscellaneous Manufactur,Equity
+Equity,Industrial,Transportation,Equity
+Equity,Industrials,Aerospace & Defense,Equity
+Equity,Industrials,Air Freight & Logistics,Equity
+Equity,Industrials,Airlines,Equity
+Equity,Industrials,Building Products,Equity
+Equity,Industrials,Construction & Engineering,Equity
+Equity,Industrials,Electrical Equipment,Equity
+Equity,Industrials,Industrial Conglomerates,Equity
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
+Credit,,,CDS
+Credit,,,CDSIndex
+Credit,Communication Services,Wireless Telecommunication Ser,ConvertibleBond
+Credit,Communications,Telecommunications,ConvertibleBond
+Credit,Consumer Discretionary,Household Durables,ConvertibleBond
