@@ -88,11 +88,11 @@ ARG PIP_EXTRA_INDEX_URL
 
 COPY readers ./readers
 COPY simple_writer.py ./simple_writer.py
-COPY trades_eod.py ./trades_eod.py
+COPY eod_batch_runner.py ./eod_batch_runner.py
 COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 RUN pwd
 ENV PYTHONPATH="/"
 
-CMD [ "python", "-u", "./trades_eod.py" ]
+CMD [ "python", "-u", "./eod_batch_runner.py" ]
