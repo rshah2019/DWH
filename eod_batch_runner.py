@@ -6,7 +6,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import os
 import datetime
-
+from risk import *
 
 def run_eod_batch():
 
@@ -63,6 +63,21 @@ def run_eod_batch():
     print(cps_df)
     counterparties = pa.Table.from_pandas(cps_df)
     pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
+
+    credit_risk_df = get_risk(max_row, "Credit")
+    print(credit_risk_df)
+    credit_risk = pa.Table.from_pandas(credit_risk_df)
+    pq.write_table(credit_risk, os.path.join(directory, 'credit_risk_eod.parquet'))
+
+    rate_risk_df = get_risk(max_row, "InterestRate")
+    print(rate_risk_df)
+    rate_risk = pa.Table.from_pandas(rate_risk_df)
+    pq.write_table(rate_risk, os.path.join(directory, 'rate_risk_eod.parquet'))
+
+    vol_risk_df = get_risk(max_row, "Volatility")
+    print(vol_risk_df)
+    volatility_risk = pa.Table.from_pandas(vol_risk_df)
+    pq.write_table(volatility_risk, os.path.join(directory, 'volatility_risk_eod.parquet'))
 
 
 if __name__ == "__main__":
