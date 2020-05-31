@@ -9,7 +9,6 @@ from random import choice
 from string import ascii_lowercase
 
 
-
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
@@ -19,31 +18,24 @@ def get_maturities():
             6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 10, 20, 25, 25, 25, 25, 30, 30]
 
 
-def get_tickers():
-    path = os.path.join(__location__, 'tickers.csv')
+def get_df(file_name):
+    path = os.path.join(__location__, file_name)
     df = pd.read_csv(path, sep=',')
+    return df
+
+
+def get_tickers():
+    df = get_df('tickers.csv')
     return df.set_index('Symbol').to_dict()['Company']
 
 
-def get_currencies():
-    path = os.path.join(__location__, 'ccy.csv')
-    df = pd.read_csv(path, sep=',')
-    return df
-
-
-def get_products():
-    path = os.path.join(__location__, 'products.csv')
-    df = pd.read_csv(path, sep=',')
-    return df
-
-
 def get_instruments():
-    print(get_products().values.tolist())
-    print(get_currencies().values.tolist())
+    print(get_df('products.csv').values.tolist())
+    print(get_df('ccy.csv').values.tolist())
     print(get_tickers())
 
-    products = get_products().values
-    currencies = get_currencies().values
+    products = get_df('products.csv').values
+    currencies = get_df('ccy.csv').values
     ticker_map = get_tickers()
     tickers = list(ticker_map.keys())
 

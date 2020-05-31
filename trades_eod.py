@@ -12,7 +12,12 @@ knowledge_time = datetime.datetime.now()
 
 max_row = os.environ.get('max_row', '100')
 ins_df = get_instruments()
+books_df = get_df('books.csv')
+cps_df = get_df('brokers.csv')
+
 product_len = len(ins_df)
+books_len = len(books_df)
+cps_len = len(cps_df)
 
 pos_df = None
 rows = []
@@ -23,6 +28,8 @@ for i in range(int(max_row)):
 
     cur_row = {'PositionId': i,
                'ProductId': randrange(product_len),
+               'BookId': randrange(books_len),
+               'CounterpartyId': randrange(cps_len),
                'Quantity': random.randint(-100000, 100000)*scale,
                'Exposure': random.randint(-100000, 100000)*scale,
                'TradeDate': trade_date,
@@ -46,6 +53,13 @@ print(ins_df)
 instruments = pa.Table.from_pandas(ins_df)
 pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
 
+print(books_df)
+books = pa.Table.from_pandas(books_df)
+pq.write_table(books, os.path.join(directory, 'books_eod.parquet'))
+
+print(cps_df)
+counterparties = pa.Table.from_pandas(cps_df)
+pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
 
 
 
