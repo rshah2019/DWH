@@ -18,7 +18,7 @@ pd2 = table2.to_pandas()
 print(pd2)
 
 
-df = pd.read_csv("C:\\Temp\\100 Sales Records.csv")
+df = pd.read_csv("C:\\Temp\\100 Sales Records.readers")
 pdd = df.to_parquet('output.parquet')
 
 client_hdfs = InsecureClient('http://PSNYD-KAFKA-01:9870')

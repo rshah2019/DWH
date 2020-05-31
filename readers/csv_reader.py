@@ -1,4 +1,4 @@
-import csv
+import readers
 import requests
 import pandas as pd
 import os
@@ -13,7 +13,7 @@ def get_tickers_web():
     with requests.Session() as s:
         download = s.get(TICKER_URL)
         decoded_content = download.content.decode('utf-8')
-        cr = csv.reader(decoded_content.splitlines(), delimiter=',')
+        cr = readers.reader(decoded_content.splitlines(), delimiter=',')
         my_list = list(cr)[1:]
         for l in my_list:
             print(l)

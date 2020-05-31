@@ -24,6 +24,7 @@ sqlContext = SQLContext(sc)
 # The result of loading a parquet file is also a DataFrame.
 parquetFile = spark.read.parquet("example.parquet")
 
+print(parquetFile)
 # Parquet files can also be used to create a temporary view and then used in SQL statements.
 parquetFile.createOrReplaceTempView("parquetFile")
 teenagers = spark.sql("SELECT Three from parquetFile ")

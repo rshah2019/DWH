@@ -1,9 +1,6 @@
-import pandas as pd
-from numpy.random import randint
-from csv_reader import get_tickers
+from readers.csv_reader import get_tickers
 import random
 from random import randrange
-import numpy as np
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq

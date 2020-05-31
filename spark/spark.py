@@ -20,9 +20,10 @@ sc = spark.sparkContext
 # using SQLContext to read parquet file
 sqlContext = SQLContext(sc)
 
-df = sqlContext.read.text('hdfs://PSNYD-KAFKA-01:9000/user/RVS/example.parquet')
+df = sqlContext.read.parquet('hdfs://PSNYD-KAFKA-01:9000/user/RVS/example.parquet')
 print(df)
 
+sc.sto
 
 # to read parquet file
 #df = sqlContext.read.parquet('hdfs://PSNYD-KAFKA-01:9000/user/RVS/example.parquet')
