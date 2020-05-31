@@ -60,6 +60,10 @@ def get_instruments():
         isin = "".join(choice(ascii_lowercase) for i in range(12))
         symbol = random.choice(tickers)
         issuer = ticker_map[symbol]
+
+        if asset_class == 'Equity':
+            maturity = None
+
         rows.append({'ProductId': product_id,
                'AssetClass': asset_class,
                'Sector': sector,
@@ -71,7 +75,14 @@ def get_instruments():
                'Symbol': symbol,
                'Issuer': issuer
                      },)
-    return pd.DataFrame(rows)
+    df = pd.DataFrame(rows)
+    df['AssetClass'] = df['AssetClass'].astype(str)
+    df['Sector'] = df['Sector'].astype(str)
+    df['Industry'] = df['Industry'].astype(str)
+    df['ProductType'] = df['ProductType'].astype(str)
+    df['Currency'] = df['Currency'].astype(str)
+
+    return df
 
 
 

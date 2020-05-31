@@ -8,8 +8,8 @@ import os
 
 
 max_row = os.environ.get('max_row', '100')
-
-product_len = len(get_products())
+ins_df = get_instruments()
+product_len = len(ins_df)
 
 rows = []
 for i in range(int(max_row)):
@@ -23,16 +23,18 @@ for i in range(int(max_row)):
                'Exposure': random.randint(-100000, 100000)*scale}
     rows.append(cur_row)
 
-df = pd.DataFrame(rows)
-
-print(df)
-
 directory = os.environ.get('directory', ".")
 
-table = pa.Table.from_pandas(df)
-pq.write_table(table, os.path.join(directory, 'trades_eod.parquet'))
+pos_df = pd.DataFrame(rows)
+print(pos_df)
+positions = pa.Table.from_pandas(pos_df)
+pq.write_table(positions, os.path.join(directory, 'trades_eod.parquet'))
+
+print(ins_df)
+instruments = pa.Table.from_pandas(ins_df)
+pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
 
 
-print(df)
+
 
 
