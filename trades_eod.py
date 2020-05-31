@@ -11,6 +11,7 @@ max_row = os.environ.get('max_row', '100')
 ins_df = get_instruments()
 product_len = len(ins_df)
 
+pos_df = None
 rows = []
 for i in range(int(max_row)):
     scale = 1
@@ -23,10 +24,14 @@ for i in range(int(max_row)):
                'Exposure': random.randint(-100000, 100000)*scale}
     rows.append(cur_row)
 
-directory = os.environ.get('directory', ".")
+    if i % 5 == 100000:
+        pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
+        rows = []
 
-pos_df = pd.DataFrame(rows)
+pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
 print(pos_df)
+
+directory = os.environ.get('directory', ".")
 positions = pa.Table.from_pandas(pos_df)
 pq.write_table(positions, os.path.join(directory, 'trades_eod.parquet'))
 
