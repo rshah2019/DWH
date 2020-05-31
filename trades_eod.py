@@ -24,9 +24,10 @@ for i in range(int(max_row)):
                'Exposure': random.randint(-100000, 100000)*scale}
     rows.append(cur_row)
 
-    if i % 5 == 100000:
+    if i % 100000 == 0:
         pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
         rows = []
+        print(i is + str(i))
 
 pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
 print(pos_df)
