@@ -13,10 +13,14 @@ product_len = len(get_products())
 
 rows = []
 for i in range(int(max_row)):
+    scale = 1
+    if i % 988 == 0:
+        scale = 25
+
     cur_row = {'PositionId': i,
                'ProductId': randrange(product_len),
-               'Quantity': randrange(100000),
-               'Exposure': randrange(100000)}
+               'Quantity': random.randint(-100000, 100000)*scale,
+               'Exposure': random.randint(-100000, 100000)*scale}
     rows.append(cur_row)
 
 df = pd.DataFrame(rows)
