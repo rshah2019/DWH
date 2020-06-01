@@ -15,6 +15,7 @@ def run_eod_batch():
     trade_date = pd.to_datetime(date_string)
     knowledge_time = pd.to_datetime('now')
     max_row = os.environ.get('max_row', '100')
+    directory = os.environ.get('directory', ".")
     ins_df = get_instruments()
     books_df = get_books()
     cps_df = get_brokers()
@@ -22,6 +23,18 @@ def run_eod_batch():
     product_len = len(ins_df)
     books_len = len(books_df)
     cps_len = len(cps_df)
+
+    print(ins_df)
+    instruments = pa.Table.from_pandas(ins_df)
+    pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
+
+    print(books_df)
+    books = pa.Table.from_pandas(books_df)
+    pq.write_table(books, os.path.join(directory, 'books_eod.parquet'))
+
+    print(cps_df)
+    counterparties = pa.Table.from_pandas(cps_df)
+    pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
 
     pos_df = None
     rows = []
@@ -49,21 +62,10 @@ def run_eod_batch():
     pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
     print(pos_df)
 
-    directory = os.environ.get('directory', ".")
+
     positions = pa.Table.from_pandas(pos_df)
     pq.write_table(positions, os.path.join(directory, 'positions_eod.parquet'))
 
-    print(ins_df)
-    instruments = pa.Table.from_pandas(ins_df)
-    pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
-
-    print(books_df)
-    books = pa.Table.from_pandas(books_df)
-    pq.write_table(books, os.path.join(directory, 'books_eod.parquet'))
-
-    print(cps_df)
-    counterparties = pa.Table.from_pandas(cps_df)
-    pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
 
     calc_risk = False
     if calc_risk:
