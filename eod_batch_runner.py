@@ -11,9 +11,9 @@ from risk import *
 
 def run_eod_batch():
 
-    trade_date = datetime.datetime(2020, 5, 29)
-    knowledge_time = datetime.datetime.now()
-
+    date_string = '2019-05-29'
+    trade_date = pd.to_datetime(date_string)
+    knowledge_time = pd.to_datetime('now')
     max_row = os.environ.get('max_row', '100')
     ins_df = get_instruments()
     books_df = get_df('books.csv')
@@ -36,7 +36,7 @@ def run_eod_batch():
                    'CounterpartyId': randrange(cps_len),
                    'Quantity': random.randint(-100000, 100000)*scale,
                    'Exposure': random.randint(-100000, 100000)*scale,
-                   'TradeDate': trade_date,
+                   'AsofDate': trade_date,
                    'KnowledgeTime': knowledge_time
                    }
         rows.append(cur_row)
@@ -51,7 +51,7 @@ def run_eod_batch():
 
     directory = os.environ.get('directory', ".")
     positions = pa.Table.from_pandas(pos_df)
-    pq.write_table(positions, os.path.join(directory, 'trades_eod.parquet'))
+    pq.write_table(positions, os.path.join(directory, 'positions_eod.parquet'))
 
     print(ins_df)
     instruments = pa.Table.from_pandas(ins_df)
@@ -65,9 +65,11 @@ def run_eod_batch():
     counterparties = pa.Table.from_pandas(cps_df)
     pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
 
-    write_credit_risk(max_row, directory)
-    write_rate_risk(max_row, directory)
-    write_vol_risk(max_row, directory)
+    calc_risk = False
+    if calc_risk:
+        write_credit_risk(max_row, directory)
+        write_rate_risk(max_row, directory)
+        write_vol_risk(max_row, directory)
 
 
 if __name__ == "__main__":
