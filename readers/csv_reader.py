@@ -24,6 +24,18 @@ def get_df(file_name):
     return df
 
 
+def get_books():
+    df = get_df('books.csv')
+    df.insert(0, 'BookId', df.index)
+    return df
+
+
+def get_brokers():
+    df = get_df('brokers.csv')
+    df.insert(0, 'PartyId', df.index)
+    return df
+
+
 def get_tickers():
     df = get_df('tickers.csv')
     return df.set_index('Symbol').to_dict()['Company']

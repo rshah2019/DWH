@@ -16,8 +16,8 @@ def run_eod_batch():
     knowledge_time = pd.to_datetime('now')
     max_row = os.environ.get('max_row', '100')
     ins_df = get_instruments()
-    books_df = get_df('books.csv')
-    cps_df = get_df('brokers.csv')
+    books_df = get_books()
+    cps_df = get_brokers()
 
     product_len = len(ins_df)
     books_len = len(books_df)
