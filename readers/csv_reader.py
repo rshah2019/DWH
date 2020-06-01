@@ -47,7 +47,7 @@ def get_instruments():
         sector = product[1]
         industry = product[2]
         product_type = product[3]
-        currency = random.choice(currencies)[0],
+        currency = random.choice(currencies)[0]
         maturity = random.choice(get_maturities())
         isin = "".join(choice(ascii_lowercase) for i in range(12)).upper()
         symbol = random.choice(tickers)
