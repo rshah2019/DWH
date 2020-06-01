@@ -47,9 +47,9 @@ def get_instruments():
         sector = product[1]
         industry = product[2]
         product_type = product[3]
-        currency = random.choice(currencies),
+        currency = random.choice(currencies)[0],
         maturity = random.choice(get_maturities())
-        isin = "".join(choice(ascii_lowercase) for i in range(12))
+        isin = "".join(choice(ascii_lowercase) for i in range(12)).upper()
         symbol = random.choice(tickers)
         issuer = ticker_map[symbol]
 
