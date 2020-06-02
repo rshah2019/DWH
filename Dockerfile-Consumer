@@ -1,0 +1,98 @@
+
+FROM python:3.6-stretch
+LABEL maintainer="eshantandon_"
+
+# Never prompts the user for choices on installation/configuration of packages
+ENV DEBIAN_FRONTEND noninteractive
+ENV TERM linux
+
+
+# Define en_US.
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+ENV LC_CTYPE en_US.UTF-8
+ENV LC_MESSAGES en_US.UTF-8
+
+RUN set -ex \
+    && buildDeps=' \
+        python3-dev \
+        libkrb5-dev \
+        libsasl2-dev \
+        libssl-dev \
+        libffi-dev \
+        libblas-dev \
+        liblapack-dev \
+        libpq-dev \
+        git \
+    ' \
+    && apt-get update -yqq \
+    && apt-get upgrade -yqq \
+    && apt-get install -yqq --no-install-recommends \
+        $buildDeps \
+        build-essential \
+        python3-pip \
+        python3-requests \
+        default-libmysqlclient-dev \
+        apt-utils \
+        curl \
+        rsync \
+        netcat \
+        locales \
+    && apt-get -y install docker \
+    && curl -sSL https://get.docker.com/ | sh \
+    && sed -i 's/^# en_US.UTF-8 UTF-8$/en_US.UTF-8 UTF-8/g' /etc/locale.gen \
+    && locale-gen \
+    && update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 \
+    && pip install -U pip setuptools wheel \
+    && pip install Cython \
+    && pip install pytz \
+    && pip install pyOpenSSL \
+    && pip install ndg-httpsclient \
+    && pip install pyasn1 \
+    && pip install python-gnupg
+
+# install wget
+RUN apt-get install wget
+
+# install unixodbc
+RUN apt-get install unixodbc-dev -y
+
+# install vim
+RUN apt-get update && \
+    apt-get install vim -y && \
+    apt-get install apt-transport-https -y
+
+# install pyodbc drivers
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/debian/9/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && \
+    ACCEPT_EULA=Y apt-get install msodbcsql17 unixodbc-dev -y && \
+    ACCEPT_EULA=Y apt-get install mssql-tools -y && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
+    /bin/bash -c "source ~/.bashrc" && \
+    apt-get install unixodbc-dev -y
+
+RUN pip install pyodbc
+
+VOLUME /com
+RUN apt-get install unzip -y && \
+    apt-get autoremove -y
+
+RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" \
+    && unzip awscli-bundle.zip \
+    && ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+
+ARG PIP_EXTRA_INDEX_URL
+
+COPY readers ./readers
+COPY spark_consumer.py ./spark_consumer.py
+COPY risk.py ./risk.py
+COPY requirements.txt ./requirements.txt
+RUN pip install -r requirements.txt
+
+RUN pwd
+ENV PYTHONPATH="/"
+
+CMD [ "python", "-u", "./spark_consumer.py" ]
