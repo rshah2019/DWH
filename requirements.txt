@@ -17,4 +17,4 @@ pypandoc
 Py4J==0.10.7
 pyspark
 hdfs
-requests
+flask
