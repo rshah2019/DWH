@@ -10,10 +10,11 @@ app.config["DEBUG"] = True
 
 @app.route('/', methods=['GET'])
 def home():
-    return "<h1>Demo for Steve D</h1><p>Explore World of Data!!.</p>"
+    return "<h1>Have Fun</h1><p>Explore World of Data!!.</p>"
 
 
 flask.Flask.sqlContext = None
+flask.Flask.hdfs_address = None
 
 
 def init():
@@ -29,6 +30,7 @@ def init():
 
         # using SQLContext to read parquet file
         flask.Flask.sqlContext = SQLContext(sc)
+        flask.Flask.hdfs_address = os.environ.get('hdfs_address')
     return flask.Flask.sqlContext
 
 # A route to return all of the available entries in our catalog.
@@ -45,6 +47,7 @@ def api_counterparties():
 @app.route('/api/instruments', methods=['GET'])
 def api_instrument():
     return get_request('instruments_eod.parquet')
+
 
 @app.route('/api/instruments_stats', methods=['GET'])
 def api_instrument_stats():
@@ -70,13 +73,13 @@ def api_positions_stats():
 def get_raw(file_name):
     s = init()
     df = s.read.parquet(
-        'hdfs://PSNYD-KAFKA-01:9000/user/root/05-29-2020/05-31-2020_17_18_UTC/{}'.format(file_name)).limit(1000)
+        'hdfs://{}/user/root/05-29-2020/05-31-2020_17_18_UTC/{}'.format(flask.Flask.hdfs_address, file_name)).limit(1000)
     return df
 
 def get_df(file_name):
     s = init()
     df = s.read.parquet(
-        'hdfs://PSNYD-KAFKA-01:9000/user/root/05-29-2020/05-31-2020_17_18_UTC/{}'.format(file_name)).limit(1000)
+        'hdfs://{}/user/root/05-29-2020/05-31-2020_17_18_UTC/{}'.format(flask.Flask.hdfs_address, file_name)).limit(1000)
     return df.toPandas()
 
 
