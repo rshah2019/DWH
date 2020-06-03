@@ -16,5 +16,6 @@ sc = spark.sparkContext
 # using SQLContext to read parquet file
 sqlContext = SQLContext(sc)
 
-df = sqlContext.read.parquet('hdfs://PSNYD-KAFKA-01:9000/user/root/05-29-2020/05-31-2020_17_18_UTC/books_eod.parquet')
+hdfs_adress = os.environ.get('hdfs_address')
+df = sqlContext.read.parquet('hdfs://{}/user/root/05-29-2020/05-31-2020_17_18_UTC/books_eod.parquet'.format(hdfs_adress))
 df.show()
