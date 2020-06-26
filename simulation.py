@@ -26,9 +26,14 @@ def get_portfolio_simulation(prefix, paths):
     simulation_df = None
     rows = []
     for p in range(paths):
-        scale = get_scale(p)
         cur_row = {'Path': p}
-        for j in tenors:
+        for i, j in enumerate(tenors):
+            scale = i * 3
+            if scale % 4 == 0:
+                scale = scale / 4
+
+            if scale == 0:
+                scale = 1
             cur_row[j] = random.randint(-1000000, 1000000) * scale
         rows.append(cur_row)
 
