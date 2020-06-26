@@ -7,6 +7,7 @@ import pyarrow.parquet as pq
 import os
 import datetime
 from risk import *
+from simulation import *
 
 
 def run_eod_batch():
@@ -15,6 +16,9 @@ def run_eod_batch():
     trade_date = pd.to_datetime(date_string)
     knowledge_time = pd.to_datetime('now')
     max_row = os.environ.get('max_row', '100')
+    position_sims = os.environ.get('position_sims', '100')
+    position_paths = os.environ.get('position_paths', '100')
+    portfolio_paths = os.environ.get('portfolio_paths', '100')
     directory = os.environ.get('directory', ".")
     ins_df = get_instruments()
     books_df = get_books()
@@ -24,17 +28,19 @@ def run_eod_batch():
     books_len = len(books_df)
     cps_len = len(cps_df)
 
-    print(ins_df)
-    instruments = pa.Table.from_pandas(ins_df)
-    pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
+    write_reference = False
+    if write_reference:
+        print(ins_df)
+        instruments = pa.Table.from_pandas(ins_df)
+        pq.write_table(instruments, os.path.join(directory, 'instruments_eod.parquet'))
 
-    print(books_df)
-    books = pa.Table.from_pandas(books_df)
-    pq.write_table(books, os.path.join(directory, 'books_eod.parquet'))
+        print(books_df)
+        books = pa.Table.from_pandas(books_df)
+        pq.write_table(books, os.path.join(directory, 'books_eod.parquet'))
 
-    print(cps_df)
-    counterparties = pa.Table.from_pandas(cps_df)
-    pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
+        print(cps_df)
+        counterparties = pa.Table.from_pandas(cps_df)
+        pq.write_table(counterparties, os.path.join(directory, 'counterparties_eod.parquet'))
 
     pos_df = None
     rows = []
@@ -62,9 +68,9 @@ def run_eod_batch():
     pos_df = pos_df.append(pd.DataFrame(rows), ignore_index=True) if pos_df is not None else pd.DataFrame(rows)
     print(pos_df)
 
-
-    positions = pa.Table.from_pandas(pos_df)
-    pq.write_table(positions, os.path.join(directory, 'positions_eod.parquet'))
+    if write_reference:
+        positions = pa.Table.from_pandas(pos_df)
+        pq.write_table(positions, os.path.join(directory, 'positions_eod.parquet'))
 
 
     calc_risk = False
@@ -72,6 +78,11 @@ def run_eod_batch():
         write_credit_risk(max_row, directory)
         write_rate_risk(max_row, directory)
         write_vol_risk(max_row, directory)
+
+    run_simulation = True
+    if run_simulation:
+        write_portfolio_simulation(int(portfolio_paths), directory)
+        write_position_simulation(int(position_sims), int(position_paths), directory)
 
 
 if __name__ == "__main__":
