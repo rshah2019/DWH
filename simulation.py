@@ -47,7 +47,7 @@ def get_position_simulation(max_row, prefix, paths):
                 cur_row[j] = random.randint(-1000000, 1000000) * scale
             rows.append(cur_row)
 
-        if i % 10000 == 0:
+        if i % 100 == 0:
             simulation_df = simulation_df.append(pd.DataFrame(rows), ignore_index=True) if simulation_df is not None else pd.DataFrame(rows)
             rows = []
             print('i is ' + str(i))
