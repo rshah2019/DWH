@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql import SQLContext
 import os
-from mysql_check2 import *
+from database_connection import *
 
 # initialise sparkContext
 # fetch test
