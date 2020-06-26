@@ -1,13 +1,10 @@
 from readers.csv_reader import *
 import random
-from random import randrange
-import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 from analyze import *
 
 tenors = ['0D', '1D', '5D', '10D', '1M', '2M', '3M', '4M', '5M', '6M', '1Y', '2Y', '5Y', '10Y']
-
 
 def get_scale(i):
     scale = 1
@@ -31,7 +28,6 @@ def get_portfolio_simulation(prefix, paths):
             scale = i * 3
             if scale % 4 == 0:
                 scale = scale / 4
-
             if scale == 0:
                 scale = 1
             cur_row[j] = random.randint(-1000000, 1000000) * scale
