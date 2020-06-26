@@ -18,3 +18,4 @@ Py4J==0.10.7
 pyspark
 hdfs
 flask
+scipy
