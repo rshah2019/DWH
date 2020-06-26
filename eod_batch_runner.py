@@ -81,8 +81,8 @@ def run_eod_batch():
 
     run_simulation = True
     if run_simulation:
-        write_portfolio_simulation(int(portfolio_paths), directory)
-        #write_position_simulation(int(position_sims), int(position_paths), directory)
+        #write_portfolio_simulation(int(portfolio_paths), directory)
+        write_position_simulation(int(position_sims), int(position_paths), directory)
 
 
 if __name__ == "__main__":
