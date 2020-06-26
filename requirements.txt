@@ -19,3 +19,4 @@ pyspark
 hdfs
 flask
 scipy
+quandl

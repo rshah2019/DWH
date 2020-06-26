@@ -4,6 +4,7 @@ from random import randrange
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
+from analyze import *
 
 tenors = ['0D', '1D', '5D', '10D', '1M', '2M', '3M', '4M', '5M', '6M', '1Y', '2Y', '5Y', '10Y']
 
@@ -32,6 +33,7 @@ def get_portfolio_simulation(prefix, paths):
         rows.append(cur_row)
 
     simulation_df = simulation_df.append(pd.DataFrame(rows), ignore_index=True) if simulation_df is not None else pd.DataFrame(rows)
+    d = var_historic(simulation_df)
     return simulation_df
 
 

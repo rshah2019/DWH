@@ -64,7 +64,7 @@ def var_historic(r, level=5):
     if isinstance(r, pd.DataFrame):
         return r.aggregate(var_historic, level=level)
     elif isinstance(r, pd.Series):
-        return -np.percentile(r, level)
+        return -np.nanpercentile(r, level)
     else:
         raise TypeError("Expected r to be Series or DataFrame")
 

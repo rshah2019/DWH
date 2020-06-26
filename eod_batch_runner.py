@@ -18,7 +18,7 @@ def run_eod_batch():
     max_row = os.environ.get('max_row', '100')
     position_sims = os.environ.get('position_sims', '100')
     position_paths = os.environ.get('position_paths', '100')
-    portfolio_paths = os.environ.get('portfolio_paths', '100')
+    portfolio_paths = os.environ.get('portfolio_paths', '10')
     directory = os.environ.get('directory', ".")
     ins_df = get_instruments()
     books_df = get_books()
