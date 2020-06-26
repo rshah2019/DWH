@@ -20,3 +20,4 @@ hdfs
 flask
 scipy
 quandl
+mysql.connector

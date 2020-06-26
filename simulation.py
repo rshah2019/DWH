@@ -38,7 +38,6 @@ def get_portfolio_simulation(prefix, paths):
         rows.append(cur_row)
 
     simulation_df = simulation_df.append(pd.DataFrame(rows), ignore_index=True) if simulation_df is not None else pd.DataFrame(rows)
-    d = var_historic(simulation_df)
     return simulation_df
 
 
@@ -59,6 +58,9 @@ def get_position_simulation(max_row, prefix, paths):
             rows = []
             print('i is ' + str(i))
     simulation_df = simulation_df.append(pd.DataFrame(rows), ignore_index=True) if simulation_df is not None else pd.DataFrame(rows)
+    dd = simulation_df.groupby(['PositionId']).mean().reset_index()
+    del dd['Path']
+    pp = pd.DataFrame(simulation_df.sum(), columns=['sum'])
     return simulation_df
 
 
