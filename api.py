@@ -1,11 +1,24 @@
+import datetime
+
 import flask
 from pyspark.sql import SparkSession
 from pyspark.sql import SQLContext
 import os
 import pandas as pd
 
+from flask import Flask, render_template
+from flask_wtf import Form
+from wtforms.fields.html5 import DateField
+app = Flask(__name__)
+app.secret_key = 'SHH!'
+
+import os
+SECRET_KEY = os.urandom(32)
+
+
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
+app.config['SECRET_KEY'] = SECRET_KEY
 
 
 @app.route('/', methods=['GET'])
@@ -87,5 +100,19 @@ def get_request(file_name):
     df = get_df(file_name)
     str = df.to_html()
     return str
+
+class ExampleForm(Form):
+    dt = DateField('DatePicker', format='%Y-%m-%d', default=datetime.date.today())
+
+
+@app.route('/form', methods=['POST','GET'])
+def hello_world():
+    form = ExampleForm()
+    #form.dt = datetime.date.today()
+    if form.validate_on_submit():
+        #return api_positions_stats()
+        #return form.dt.data.strftime('%Y-%m-%d')
+        pass
+    return render_template('example.html', form=form)
 
 app.run(host='0.0.0.0')
