@@ -11,7 +11,7 @@ six==1.11.0
 teamcity-messages==1.21
 xlrd
 boto3
-pyarrow==0.17.1
+pyarrow==14.0.1
 hd
 pypandoc
 Py4J==0.10.7
